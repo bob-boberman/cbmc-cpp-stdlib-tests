@@ -11,10 +11,14 @@ I experimented a bit with compiler flags for optimization, but there’s likely 
 All programs are tested as C++ programs using the .cpp extension.
 The grouping by standard is taken from https://en.cppreference.com/w/cpp/standard_library.html. 
 
+The test can be run by executing the run-all-test.py script in the corresponding folder. 
+
+## Results: 
+
 Here are the results for CBMC 6.6.0 (with GCC 15.1.1 and Clang 20.1.6 used for sanity checks):
 
 
-## 📌 Import-Only Tests
+### 📌 Import-Only Tests
 
 In the corresponding test programs, the libraries are included but not used. For example:
 
@@ -26,7 +30,7 @@ int main() {}
 ```
 
 
-### Overview
+#### Overview
 
 | Tool                 | Total | PASS | FAIL | TIMEOUT |
 |-----------------------|-------|-------|-------|---------|
@@ -35,7 +39,7 @@ int main() {}
 | **GCC**               | 142   | 140   | 2     | 0       | 
 | **Clang**             | 142   | 141   | 1     | 0       | 
 
-### Per-standard support (Import Only)
+#### Per-standard support (Import Only)
 
 | Standard                    | CBMC | goto-cc | GCC | Clang |
 |-----------------------------|-------|---------|------|--------|
@@ -55,7 +59,7 @@ int main() {}
 
 ---
 
-## 📌 Import + Usage Tests
+### 📌 Import + Usage Tests
 
 Simple test programs are provided for the imported libraries, but they do not cover the full range of functionality. For example: 
 
@@ -69,7 +73,7 @@ int main() {
 
 ```
 
-### Overview
+#### Overview
 
 | Tool                 | Total | PASS | FAIL | TIMEOUT 
 |-----------------------|-------|-------|-------|---------
@@ -78,7 +82,7 @@ int main() {
 | **GCC**               | 142   | 134   | 8     | 0       | 
 | **Clang**             | 142   | 134   | 8     | 0       | 
 
-### Per-standard support (Import + Usage)
+#### Per-standard support (Import + Usage)
 
 | Standard                    | CBMC | goto-cc | GCC | Clang |
 |-----------------------------|-------|---------|------|--------|
