@@ -1,0 +1,3 @@
+#include <latch>
+
+int main() {}

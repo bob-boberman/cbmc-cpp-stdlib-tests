@@ -1,0 +1,357 @@
+===== OVERVIEW SUMMARY =====
+
+test-with-cbmc.py overview:
+=== CBMC Compilation Overview ===
+cpp98_test.cpp [--cpp98]: PASS
+cpp11_test.cpp [--cpp11]: FAIL
+cpp17_test.cpp [(default)]: FAIL
+cpp20_test.cpp [(default)]: FAIL
+cpp23_test.cpp [(default)]: FAIL
+
+test-with-goto-cc.py overview:
+=== goto-cc Compilation Overview ===
+cpp98_test.cpp: PASS
+cpp11_test.cpp: FAIL
+cpp17_test.cpp: FAIL
+cpp20_test.cpp: FAIL
+cpp23_test.cpp: FAIL
+
+test-with-gcc.py overview:
+=== g++ Compilation Overview ===
+cpp98_test.cpp [-std=c++98]: PASS
+cpp11_test.cpp [-std=c++11]: PASS
+cpp17_test.cpp [-std=c++17]: PASS
+cpp20_test.cpp [-std=c++20]: PASS
+cpp23_test.cpp [-std=c++23]: FAIL
+
+test-with-clang.py overview:
+=== clang++ Compilation Overview ===
+cpp98_test.cpp [-std=c++98]: PASS
+cpp11_test.cpp [-std=c++11]: PASS
+cpp17_test.cpp [-std=c++17]: PASS
+cpp20_test.cpp [-std=c++20]: PASS
+cpp23_test.cpp [-std=c++23]: FAIL
+
+===== FULL OUTPUTS =====
+
+===== Output from test-with-cbmc.py =====
+Running CBMC (--cpp98) on src/cpp98_test.cpp...
+Running CBMC (--cpp11) on src/cpp11_test.cpp...
+Running CBMC (default) on src/cpp17_test.cpp...
+Running CBMC (default) on src/cpp20_test.cpp...
+Running CBMC (default) on src/cpp23_test.cpp...
+
+Results for cpp98_test.cpp [--cpp98] :
+STDOUT:
+CBMC version 6.6.0 (cbmc-6.6.0) 64-bit x86_64 linux
+Type-checking cpp98_test
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+Generic Property Instrumentation
+Starting Bounded Model Checking
+
+** Results:
+[pointer_dereference.1] file src/cpp98_test.cpp line 18 dereference failure: pointer NULL in this->value: SUCCESS
+[pointer_dereference.2] file src/cpp98_test.cpp line 18 dereference failure: pointer invalid in this->value: SUCCESS
+[pointer_dereference.3] file src/cpp98_test.cpp line 18 dereference failure: deallocated dynamic object in this->value: SUCCESS
+[pointer_dereference.4] file src/cpp98_test.cpp line 18 dereference failure: dead object in this->value: SUCCESS
+[pointer_dereference.5] file src/cpp98_test.cpp line 18 dereference failure: pointer outside object bounds in this->value: SUCCESS
+[pointer_dereference.6] file src/cpp98_test.cpp line 18 dereference failure: invalid integer address in this->value: SUCCESS
+src/cpp98_test.cpp function add
+[add.overflow.1] line 5 arithmetic overflow on signed + in a + b: SUCCESS
+
+src/cpp98_test.cpp function get
+[get.pointer_dereference.1] line 25 dereference failure: pointer NULL in this->value: SUCCESS
+[get.pointer_dereference.2] line 25 dereference failure: pointer invalid in this->value: SUCCESS
+[get.pointer_dereference.3] line 25 dereference failure: deallocated dynamic object in this->value: SUCCESS
+[get.pointer_dereference.4] line 25 dereference failure: dead object in this->value: SUCCESS
+[get.pointer_dereference.5] line 25 dereference failure: pointer outside object bounds in this->value: SUCCESS
+[get.pointer_dereference.6] line 25 dereference failure: invalid integer address in this->value: SUCCESS
+
+src/cpp98_test.cpp function mul
+[mul.overflow.1] line 10 arithmetic overflow on signed * in a * b: SUCCESS
+
+src/cpp98_test.cpp function operator==
+[operator==.pointer_dereference.1] line 21 dereference failure: pointer NULL in this->value: SUCCESS
+[operator==.pointer_dereference.2] line 21 dereference failure: pointer invalid in this->value: SUCCESS
+[operator==.pointer_dereference.3] line 21 dereference failure: deallocated dynamic object in this->value: SUCCESS
+[operator==.pointer_dereference.4] line 21 dereference failure: dead object in this->value: SUCCESS
+[operator==.pointer_dereference.5] line 21 dereference failure: pointer outside object bounds in this->value: SUCCESS
+[operator==.pointer_dereference.6] line 21 dereference failure: invalid integer address in this->value: SUCCESS
+[operator==.pointer_dereference.7] line 21 dereference failure: pointer NULL in other->value: SUCCESS
+[operator==.pointer_dereference.8] line 21 dereference failure: pointer invalid in other->value: SUCCESS
+[operator==.pointer_dereference.9] line 21 dereference failure: deallocated dynamic object in other->value: SUCCESS
+[operator==.pointer_dereference.10] line 21 dereference failure: dead object in other->value: SUCCESS
+[operator==.pointer_dereference.11] line 21 dereference failure: pointer outside object bounds in other->value: SUCCESS
+[operator==.pointer_dereference.12] line 21 dereference failure: invalid integer address in other->value: SUCCESS
+
+** 0 of 26 failed (1 iterations)
+VERIFICATION SUCCESSFUL
+
+STDERR:
+
+
+Results for cpp11_test.cpp [--cpp11] :
+STDOUT:
+CBMC version 6.6.0 (cbmc-6.6.0) 64-bit x86_64 linux
+
+STDERR:
+file src/cpp11_test.cpp line 34: parse error before 'v : arr )'
+file src/cpp11_test.cpp line 49: parse error before 'return ( x =='
+file src/cpp11_test.cpp line 50: parse error before '}'
+PARSING ERROR
+
+
+Results for cpp17_test.cpp [(default)] :
+STDOUT:
+CBMC version 6.6.0 (cbmc-6.6.0) 64-bit x86_64 linux
+
+STDERR:
+file src/cpp17_test.cpp line 10: parse error before '... ) ; }'
+file src/cpp17_test.cpp line 17: parse error before '[ x , y'
+file src/cpp17_test.cpp line 26: parse error before 'return ( x =='
+file src/cpp17_test.cpp line 27: parse error before '}'
+PARSING ERROR
+
+
+Results for cpp20_test.cpp [(default)] :
+STDOUT:
+CBMC version 6.6.0 (cbmc-6.6.0) 64-bit x86_64 linux
+
+STDERR:
+file src/cpp20_test.cpp line 4: parse error before ', T b )'
+file src/cpp20_test.cpp line 6: parse error before '} ; consteval int'
+file src/cpp20_test.cpp line 8: parse error before 'int always_five ( )'
+file src/cpp20_test.cpp line 10: parse error before '} struct Point {'
+file src/cpp20_test.cpp line 15: parse error before '} ; constinit int'
+file src/cpp20_test.cpp line 17: parse error before 'int global_value = 20'
+file src/cpp20_test.cpp line 23: parse error before 'v : arr )'
+file src/cpp20_test.cpp line 30: parse error before 'return ( sum =='
+file src/cpp20_test.cpp line 31: parse error before '}'
+PARSING ERROR
+
+
+Results for cpp23_test.cpp [(default)] :
+STDOUT:
+CBMC version 6.6.0 (cbmc-6.6.0) 64-bit x86_64 linux
+
+STDERR:
+file src/cpp23_test.cpp line 6: parse error before 'void inc ( this'
+file src/cpp23_test.cpp line 10: parse error before 'static int call ('
+file src/cpp23_test.cpp line 12: parse error before '} static int call_static'
+file src/cpp23_test.cpp line 16: parse error before '} } ; int'
+file src/cpp23_test.cpp line 23: parse error before '{ v = 1'
+file src/cpp23_test.cpp line 25: parse error before 'else { v ='
+file src/cpp23_test.cpp line 27: parse error before '} int s ='
+file src/cpp23_test.cpp line 31: parse error before 'return ( c .'
+file src/cpp23_test.cpp line 32: parse error before '}'
+PARSING ERROR
+
+
+=== CBMC Compilation Overview ===
+cpp98_test.cpp [--cpp98]: PASS
+cpp11_test.cpp [--cpp11]: FAIL
+cpp17_test.cpp [(default)]: FAIL
+cpp20_test.cpp [(default)]: FAIL
+cpp23_test.cpp [(default)]: FAIL
+
+
+===== Output from test-with-goto-cc.py =====
+Running goto-cc on src/cpp98_test.cpp...
+Running goto-cc on src/cpp11_test.cpp...
+Running goto-cc on src/cpp17_test.cpp...
+Running goto-cc on src/cpp20_test.cpp...
+Running goto-cc on src/cpp23_test.cpp...
+
+Results for cpp98_test.cpp:
+STDOUT:
+
+STDERR:
+
+
+Results for cpp11_test.cpp:
+STDOUT:
+
+STDERR:
+src/cpp11_test.cpp:34:1: error: parse error before 'v : arr )'
+     for (auto v : arr)
+src/cpp11_test.cpp:49:1: error: parse error before 'return ( x =='
+     return (x == 42 && sum == 6 && y == 5 && m2.get() == 5 && c == Color::Red) ? 0 : 1;
+src/cpp11_test.cpp:50:1: error: parse error before '}'
+ }
+PARSING ERROR
+
+
+Results for cpp17_test.cpp:
+STDOUT:
+
+STDERR:
+src/cpp17_test.cpp:10:1: error: parse error before '... ) ; }'
+     return (args + ...);
+src/cpp17_test.cpp:17:1: error: parse error before '[ x , y'
+     auto [x, y] = s;
+src/cpp17_test.cpp:26:1: error: parse error before 'return ( x =='
+     return (x == 1 && y == 2.0 && result == 1 && folded == 10 && global_var == 17) ? 0 : 1;
+src/cpp17_test.cpp:27:1: error: parse error before '}'
+ }
+PARSING ERROR
+
+
+Results for cpp20_test.cpp:
+STDOUT:
+
+STDERR:
+src/cpp20_test.cpp:4:1: error: parse error before ', T b )'
+ concept Addable = requires(T a, T b) {
+src/cpp20_test.cpp:6:1: error: parse error before '} ; consteval int'
+ };
+src/cpp20_test.cpp:8:1: error: parse error before 'int always_five ( )'
+ consteval int always_five() {
+src/cpp20_test.cpp:10:1: error: parse error before '} struct Point {'
+ }
+src/cpp20_test.cpp:15:1: error: parse error before '} ; constinit int'
+ };
+src/cpp20_test.cpp:17:1: error: parse error before 'int global_value = 20'
+ constinit int global_value = 20;
+src/cpp20_test.cpp:20:1: error: parse error before '; int arr ['
+     static_assert(Addable<int>);
+src/cpp20_test.cpp:23:1: error: parse error before 'for ( int v'
+     for (int v : arr)
+src/cpp20_test.cpp:26:1: error: parse error before '. x = 1'
+     Point p = {.x = 1, .y = 2};
+src/cpp20_test.cpp:30:1: error: parse error before 'return ( sum =='
+     return (sum == 6 && p.x == 1 && p.y == 2 && val == 5 && global_value == 20) ? 0 : 1;
+PARSING ERROR
+
+
+Results for cpp23_test.cpp:
+STDOUT:
+
+STDERR:
+src/cpp23_test.cpp:6:1: error: parse error before 'void inc ( this'
+     void inc(this Counter& self) {
+src/cpp23_test.cpp:10:1: error: parse error before 'static int call ('
+     static int call() {
+src/cpp23_test.cpp:12:1: error: parse error before '} static int call_static'
+     }
+src/cpp23_test.cpp:16:1: error: parse error before '} } ; int'
+     }
+src/cpp23_test.cpp:23:1: error: parse error before '{ v = 1'
+     if consteval {
+src/cpp23_test.cpp:25:1: error: parse error before 'else { v ='
+     } else {
+src/cpp23_test.cpp:27:1: error: parse error before '} int s ='
+     }
+src/cpp23_test.cpp:31:1: error: parse error before 'return ( c .'
+     return (c.value == 1 && (v == 1 || v == 2) && s == 23 && t == 42) ? 0 : 1;
+src/cpp23_test.cpp:32:1: error: parse error before '}'
+ }
+PARSING ERROR
+
+
+=== goto-cc Compilation Overview ===
+cpp98_test.cpp: PASS
+cpp11_test.cpp: FAIL
+cpp17_test.cpp: FAIL
+cpp20_test.cpp: FAIL
+cpp23_test.cpp: FAIL
+
+
+===== Output from test-with-gcc.py =====
+Running g++ -std=c++98 on src/cpp98_test.cpp...
+Running g++ -std=c++11 on src/cpp11_test.cpp...
+Running g++ -std=c++17 on src/cpp17_test.cpp...
+Running g++ -std=c++20 on src/cpp20_test.cpp...
+Running g++ -std=c++23 on src/cpp23_test.cpp...
+
+Results for cpp98_test.cpp [-std=c++98] :
+STDOUT:
+
+STDERR:
+
+
+Results for cpp11_test.cpp [-std=c++11] :
+STDOUT:
+
+STDERR:
+
+
+Results for cpp17_test.cpp [-std=c++17] :
+STDOUT:
+
+STDERR:
+
+
+Results for cpp20_test.cpp [-std=c++20] :
+STDOUT:
+
+STDERR:
+
+
+Results for cpp23_test.cpp [-std=c++23] :
+STDOUT:
+
+STDERR:
+src/cpp23_test.cpp:14:16: error: constraints on a non-templated function
+   14 |     static int call_static() requires true {
+      |                ^~~~~~~~~~~
+
+
+=== g++ Compilation Overview ===
+cpp98_test.cpp [-std=c++98]: PASS
+cpp11_test.cpp [-std=c++11]: PASS
+cpp17_test.cpp [-std=c++17]: PASS
+cpp20_test.cpp [-std=c++20]: PASS
+cpp23_test.cpp [-std=c++23]: FAIL
+
+
+===== Output from test-with-clang.py =====
+Running clang++ -std=c++98 on src/cpp98_test.cpp...
+Running clang++ -std=c++11 on src/cpp11_test.cpp...
+Running clang++ -std=c++17 on src/cpp17_test.cpp...
+Running clang++ -std=c++20 on src/cpp20_test.cpp...
+Running clang++ -std=c++23 on src/cpp23_test.cpp...
+
+Results for cpp98_test.cpp [-std=c++98] :
+STDOUT:
+
+STDERR:
+
+
+Results for cpp11_test.cpp [-std=c++11] :
+STDOUT:
+
+STDERR:
+
+
+Results for cpp17_test.cpp [-std=c++17] :
+STDOUT:
+
+STDERR:
+
+
+Results for cpp20_test.cpp [-std=c++20] :
+STDOUT:
+
+STDERR:
+
+
+Results for cpp23_test.cpp [-std=c++23] :
+STDOUT:
+
+STDERR:
+src/cpp23_test.cpp:14:39: error: non-templated function cannot have a requires clause
+   14 |     static int call_static() requires true {
+      |                                       ^
+1 error generated.
+
+
+=== clang++ Compilation Overview ===
+cpp98_test.cpp [-std=c++98]: PASS
+cpp11_test.cpp [-std=c++11]: PASS
+cpp17_test.cpp [-std=c++17]: PASS
+cpp20_test.cpp [-std=c++20]: PASS
+cpp23_test.cpp [-std=c++23]: FAIL
+
+

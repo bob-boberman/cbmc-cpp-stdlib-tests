@@ -1,0 +1,3 @@
+#include <coroutine>
+
+int main() {}

@@ -1,0 +1,3 @@
+#include <cassert>
+
+int main() {}

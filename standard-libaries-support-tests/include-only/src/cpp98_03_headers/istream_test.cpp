@@ -1,0 +1,3 @@
+#include <istream>
+
+int main() {}

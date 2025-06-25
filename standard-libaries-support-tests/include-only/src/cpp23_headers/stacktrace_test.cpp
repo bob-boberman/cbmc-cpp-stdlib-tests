@@ -1,0 +1,3 @@
+#include <stacktrace>
+
+int main() {}

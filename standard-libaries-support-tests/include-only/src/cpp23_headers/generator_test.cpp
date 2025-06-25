@@ -1,0 +1,3 @@
+#include <generator>
+
+int main() {}

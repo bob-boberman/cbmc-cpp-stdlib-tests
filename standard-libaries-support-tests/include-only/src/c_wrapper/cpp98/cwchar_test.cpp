@@ -1,0 +1,3 @@
+#include <cwchar>
+
+int main() {}

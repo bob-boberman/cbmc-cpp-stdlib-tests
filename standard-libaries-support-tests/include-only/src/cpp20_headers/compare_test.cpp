@@ -1,0 +1,3 @@
+#include <compare>
+
+int main() {}

@@ -1,0 +1,3 @@
+#include <cfenv>
+
+int main() {}

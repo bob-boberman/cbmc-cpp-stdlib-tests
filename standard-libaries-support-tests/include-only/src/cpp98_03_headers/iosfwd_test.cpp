@@ -1,0 +1,3 @@
+#include <iosfwd>
+
+int main() {}

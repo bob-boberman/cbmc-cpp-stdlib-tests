@@ -1,0 +1,3 @@
+#include <locale>
+
+int main() {}

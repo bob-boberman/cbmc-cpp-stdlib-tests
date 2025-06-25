@@ -1,0 +1,3 @@
+#include <streambuf>
+
+int main() {}

@@ -1,0 +1,3 @@
+#include <numeric>
+
+int main() {}

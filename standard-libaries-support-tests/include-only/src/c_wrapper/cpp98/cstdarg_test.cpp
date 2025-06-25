@@ -1,0 +1,3 @@
+#include <cstdarg>
+
+int main() {}

@@ -1,0 +1,3 @@
+#include <stdfloat>
+
+int main() {}

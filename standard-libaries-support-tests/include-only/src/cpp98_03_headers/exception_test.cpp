@@ -1,0 +1,3 @@
+#include <exception>
+
+int main() {}

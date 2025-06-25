@@ -1,0 +1,3 @@
+#include <cstdbool>
+
+int main() {}

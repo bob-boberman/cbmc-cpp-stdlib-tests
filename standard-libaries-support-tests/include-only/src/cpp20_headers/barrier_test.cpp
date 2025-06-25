@@ -1,0 +1,3 @@
+#include <barrier>
+
+int main() {}

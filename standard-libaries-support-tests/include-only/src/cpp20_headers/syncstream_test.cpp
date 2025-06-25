@@ -1,0 +1,3 @@
+#include <syncstream>
+
+int main() {}

@@ -1,0 +1,3 @@
+#include <ostream>
+
+int main() {}

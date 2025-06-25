@@ -1,0 +1,3 @@
+#include <cstdalign>
+
+int main() {}
