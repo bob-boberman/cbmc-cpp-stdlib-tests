@@ -9,6 +9,7 @@ This is **not** a polished or comprehensive verification suite — it’s a rudi
 I experimented a bit with compiler flags for optimization, but there’s likely still room for improvement; it should be sufficient to show a trend.
 
 All programs are tested as C++ programs using the .cpp extension.
+The grouping by standard is taken from https://en.cppreference.com/w/cpp/standard_library.html. 
 
 Here are the results for CBMC 6.6.0 (with GCC 15.1.1 and Clang 20.1.6 used for sanity checks):
 
